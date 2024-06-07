@@ -1,13 +1,13 @@
 databases:
-  - name: pictweet_db
-    databaseName: pictweet_db
-    user: pictweet_db
+  - name: pictweet
+    databaseName: pictweet
+    user: pictweet
     region: ohio
     plan: free
 
 services:
   - type: web
-    name: pictweet_production
+    name: pictweet
     env: python
     region: ohio
     plan: free
@@ -19,7 +19,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: pictweet_production_db
+          name: pictweet
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
